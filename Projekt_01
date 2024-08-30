@@ -1,0 +1,36 @@
+print("Witaj w aplikacji słownik memów!")
+print("Tutaj możesz dowiedzieć się znaczenia różnych słów używanych w Internecie.")
+print("Jesli nie znajdziesz słowa, możesz dodać je do słownika!")
+
+meme_dict = {
+    "CRINGE": "Coś dziwnego lub wstydliwego",
+    "LOL": "Odpowiedź na coś zabawnego",
+    "ROFL": "Odpowiedź na żart",
+    "SHEESH": "Lekka dezaprobata",
+    "CREEPY": "Straszny, złowieszczy",
+    "AGGRO": "Stać się agresywnym/zły",
+    "DUJUSPIKINGLISZ": "Humorystyczny sposób na powiedzenie 'Do you speak English?' używany w memach."
+}
+
+while True:
+    word = input("\nWpisz slowo, ktorego nie rozumiesz (uzywaj wielkich liter!): ")
+
+    if word in meme_dict.keys():
+        print("Definicja '" + word + "': " + meme_dict[word])
+    else:
+        print("Przepraszam, nie znam tego słowa.")
+        add_word = input("Czy chcesz dodać to słowo do słownika? (tak/nie): ")
+        
+        if add_word == "tak":
+            for i in range(5):
+                new_definition = input("Podaj definicję dla '" + word + "': ")
+                meme_dict[word] = new_definition
+                print("Dodano słowo '" + word + "' do słownika z definicją: " + new_definition)
+            print("Dziękujemy za dodanie nowych słów!")
+        else:
+            print("Dziękujemy za skorzystanie z programu!")
+
+    continue_program = input("\nCzy chcesz sprawdzić lub dodać kolejne słowo? (tak/nie): ")
+    if continue_program != "tak":
+        print("Dziękujemy za skorzystanie z programu! Do zobaczenia!")
+        break
